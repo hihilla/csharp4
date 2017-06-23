@@ -1,6 +1,17 @@
-﻿namespace Ex04.Menus.Interfaces
+﻿using System;
+
+namespace Ex04.Menus.Interfaces
 {
-    class SubMenu : MainMenu
+    class SubMenu : Menu, IMenuItem
     {
+        public string GetTitle()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void OnSelected()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

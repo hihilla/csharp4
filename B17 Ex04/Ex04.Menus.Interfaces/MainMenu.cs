@@ -1,6 +1,6 @@
 ﻿namespace Ex04.Menus.Interfaces
 {
-    class MainMenu
+    class MainMenu : Menu
     {
     }
 }
