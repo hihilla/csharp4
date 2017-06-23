@@ -4,9 +4,14 @@ namespace Ex04.Menus.Interfaces
 {
     abstract class Menu
     {
-        private string m_Title = "";
-        private readonly List<IMenuItem> r_MenuItems;
-        private readonly int r_CurrentLevel;
+        internal string m_Title = "";
+        internal readonly List<IMenuItem> r_MenuItems;
+        internal readonly int r_CurrentLevel;
+
+        internal Menu()
+        {
+
+        }
 
         public void ShowMenu()
         {

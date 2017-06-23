@@ -6,7 +6,7 @@ namespace Ex04.Menus.Interfaces
     {
         public string GetTitle()
         {
-            throw new NotImplementedException();
+            return m_Title;
         }
 
         public void OnSelected()
