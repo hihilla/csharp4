@@ -11,14 +11,14 @@ namespace Ex04.Menus.Interfaces
             this.AddMenuItem(new ExitItem(), sr_ExitOption);
         }
 
-        public MainMenu(string i_Title, Nullable<int> i_Level)
-            : base(i_Title, i_Level)
+        public MainMenu(string i_Title)
+            : base(i_Title, null)
         {
             this.AddMenuItem(new ExitItem(), sr_ExitOption);
         }
 
-        public MainMenu(string i_Title, Nullable<int> i_Level, List<IMenuItem> i_Items)
-            : base(i_Title, i_Level, i_Items)
+        public MainMenu(string i_Title, List<IMenuItem> i_Items)
+            : base(i_Title, null, i_Items)
         {
             this.AddMenuItem(new ExitItem(), sr_ExitOption);
         }
