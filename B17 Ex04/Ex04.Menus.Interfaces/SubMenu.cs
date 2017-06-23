@@ -4,6 +4,7 @@ namespace Ex04.Menus.Interfaces
 {
     class SubMenu : Menu, IMenuItem
     {
+        
         public string GetTitle()
         {
             return m_Title;
@@ -11,7 +12,7 @@ namespace Ex04.Menus.Interfaces
 
         public void OnSelected()
         {
-            throw new NotImplementedException();
+            base.ShowMenu();
         }
     }
 }
