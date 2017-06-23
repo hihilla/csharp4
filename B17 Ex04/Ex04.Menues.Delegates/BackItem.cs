@@ -5,7 +5,7 @@
         public BackItem()
         {
             m_Title = "Back";
-            m_SerialNumber = 0;
+            r_SerialNumber = 0;
         }
 
         public override void OnSelected() { }

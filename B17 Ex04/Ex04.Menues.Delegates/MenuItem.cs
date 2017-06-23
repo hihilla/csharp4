@@ -15,11 +15,11 @@ namespace Ex04.Menues.Delegates
             Selected = null;
         }
 
-        public MenuItem(string i_Title, Nullable<int> i_SerialNumber, SelectedEventHandler i_ActionDelegate)
+        public MenuItem(string i_Title, Nullable<int> i_SerialNumber, SelectedEventHandler i_EventHandler)
         {
             this.m_Title = i_Title;
             this.r_SerialNumber = i_SerialNumber;
-            this.Selected += i_ActionDelegate;
+            this.Selected += i_EventHandler;
         }
 
         public string Title
