@@ -2,8 +2,8 @@
 {
     class ExitItem : MenuItem
     {
-        public ExitItem(SelectedEventHandler i_EventHandler) 
-            : base("Exit", 0, i_EventHandler)
+        public ExitItem(/*SelectedEventHandler i_EventHandler*/) 
+            : base("Exit", 0/*, i_EventHandler*/)
         {
         }
 

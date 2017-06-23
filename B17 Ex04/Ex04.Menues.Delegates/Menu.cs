@@ -14,14 +14,14 @@ namespace Ex04.Menues.Delegates
             this.r_MenuItems = new List<MenuItem>();
         }
 
-        internal Menu(string i_Title, Nullable<int> i_Level, SelectedEventHandler i_EventHandler) 
-            : base (i_Title, i_Level, i_EventHandler)
+        internal Menu(string i_Title, Nullable<int> i_Level/*, SelectedEventHandler i_EventHandler*/) 
+            : base (i_Title, i_Level/*, i_EventHandler*/)
         {
             this.r_MenuItems = new List<MenuItem>();
         }
 
-        internal Menu(string i_Title, Nullable<int> i_Level, List<MenuItem> i_Items, SelectedEventHandler i_EventHandler) 
-            : base (i_Title, i_Level, i_EventHandler)
+        internal Menu(string i_Title, Nullable<int> i_Level, List<MenuItem> i_Items/*, SelectedEventHandler i_EventHandler*/) 
+            : base (i_Title, i_Level/*, i_EventHandler*/)
         {
             this.r_MenuItems = new List<MenuItem>(i_Items);
         }
