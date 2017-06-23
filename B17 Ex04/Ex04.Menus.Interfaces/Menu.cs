@@ -60,10 +60,7 @@ namespace Ex04.Menus.Interfaces
                 this.printItems();
                 chosenAction = this.usersChosenAction();
                 Console.Clear();
-                if (chosenAction != sr_ExitOption)
-                {
-                    r_MenuItems[chosenAction].OnSelected();
-                }
+                r_MenuItems[chosenAction].OnSelected();
             } while (chosenAction != sr_ExitOption);
         }
 
