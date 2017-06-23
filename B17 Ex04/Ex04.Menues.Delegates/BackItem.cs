@@ -2,10 +2,9 @@
 {
     class BackItem : MenuItem
     {
-        public BackItem()
+        public BackItem(SelectedEventHandler i_EventHandler) 
+            : base("Back", 0, i_EventHandler)
         {
-            m_Title = "Back";
-            r_SerialNumber = 0;
         }
 
         public override void OnSelected() { }

@@ -2,10 +2,9 @@
 {
     class ExitItem : MenuItem
     {
-        public ExitItem()
+        public ExitItem(SelectedEventHandler i_EventHandler) 
+            : base("Exit", 0, i_EventHandler)
         {
-            m_Title = "Exit";
-            r_SerialNumber = 0;
         }
 
         public override void OnSelected() { }
