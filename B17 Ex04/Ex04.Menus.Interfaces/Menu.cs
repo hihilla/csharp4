@@ -11,19 +11,19 @@ namespace Ex04.Menus.Interfaces
         internal static readonly string sr_Divider = "================";
         internal static readonly int sr_ExitOption = 0;
 
-        public Menu()
+        internal Menu()
         {
             this.r_MenuItems = new List<IMenuItem>();
         }
 
-        internal Menu(string i_Title, int i_Level)
+        internal Menu(string i_Title, Nullable<int> i_Level)
         {
             this.m_Title = i_Title;
             this.r_CurrentLevel = i_Level;
             this.r_MenuItems = new List<IMenuItem>();
         }
 
-        internal Menu(string i_Title, int i_Level, List<IMenuItem> i_Items)
+        internal Menu(string i_Title, Nullable<int> i_Level, List<IMenuItem> i_Items)
         {
             this.m_Title = i_Title;
             this.r_CurrentLevel = i_Level;
@@ -77,7 +77,9 @@ namespace Ex04.Menus.Interfaces
             do
             {
                 Console.WriteLine(message);
-            } while (!int.TryParse(Console.ReadLine(), out action) || (action < 0) || (action > r_MenuItems.Count));
+            } while (!int.TryParse(Console.ReadLine(), out action) 
+                     || (action < 0) 
+                     || (action > r_MenuItems.Count));
 
             return action;
         }
