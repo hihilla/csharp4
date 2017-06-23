@@ -9,6 +9,6 @@ namespace Ex04.Menus.Interfaces
             return "Back";
         }
 
-        public void OnSelected() {}
+        public void OnSelected() { }
     }
 }

@@ -5,18 +5,18 @@
         internal string m_Title;
         internal int m_SerialNumber;
 
-        public delegate void ActionDelegate();
-        public event ActionDelegate ActionEventHendler;
+        public delegate void SelectedEventHandler();
+        public event SelectedEventHandler Selected;
 
         public MenuItem()
         {
-            ActionEventHendler = null;
+            Selected = null;
         }
-        public MenuItem(string i_Title, int i_SerialNumber, ActionDelegate i_ActionDelegate)
+        public MenuItem(string i_Title, int i_SerialNumber, SelectedEventHandler i_ActionDelegate)
         {
             this.m_Title = i_Title;
             this.m_SerialNumber = i_SerialNumber;
-            this.ActionEventHendler += i_ActionDelegate;
+            this.Selected += i_ActionDelegate;
         }
         public string Title
         {
@@ -26,12 +26,12 @@
             }
         }
 
-        public void OnSelected()
+        virtual public void OnSelected()
         {
-            if (ActionEventHendler == null) {
+            if (Selected == null) {
                 
             } else {
-                ActionEventHendler.Invoke();
+                Selected.Invoke();
             }
         }
     }
