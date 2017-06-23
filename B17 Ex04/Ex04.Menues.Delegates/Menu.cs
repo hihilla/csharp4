@@ -40,7 +40,7 @@ namespace Ex04.Menues.Delegates
 			for (int i = 0; i < r_MenuItems.Count; i++)
 			{
 				MenuItem item = r_MenuItems[i];
-				//string title = string.Format("{0}. {1}", i, item.GetTitle());
+				string title = string.Format("{0}. {1}", i, item.Title());
 				Console.WriteLine(title);
 			}
 		}
@@ -60,7 +60,8 @@ namespace Ex04.Menues.Delegates
 				this.printItems();
 				chosenAction = this.usersChosenAction();
 				Console.Clear();
-				//r_MenuItems[chosenAction].OnSelected();
+                //r_MenuItems[chosenAction].OnSelected();
+                r_MenuItems[chosenAction].OnSelected();
 			} while (chosenAction != sr_ExitOption);
 		}
 

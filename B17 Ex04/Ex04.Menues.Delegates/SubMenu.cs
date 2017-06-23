@@ -22,15 +22,5 @@ namespace Ex04.Menues.Delegates
 		{
 			this.AddMenuItem(new BackItem(), sr_ExitOption);
 		}
-
-		public string GetTitle()
-		{
-			return m_Title;
-		}
-
-		public void OnSelected()
-		{
-			base.ShowMenu();
-		}
     }
 }
