@@ -6,12 +6,12 @@ namespace Ex04.Menus.Interfaces
     {
         public string GetTitle()
         {
-            throw new NotImplementedException();
+            return "Exit";
         }
 
         public void OnSelected()
         {
-            throw new NotImplementedException();
+            Environment.Exit(0);
         }
     }
 }
