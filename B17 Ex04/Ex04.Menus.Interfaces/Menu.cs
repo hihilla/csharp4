@@ -10,32 +10,7 @@ namespace Ex04.Menus.Interfaces
         internal readonly Nullable<int> r_CurrentLevel;
         internal static readonly string sr_Divider = "================";
         internal static readonly int sr_ExitOption = 0;
-
-<<<<<<< HEAD
-        public Menu()
-        {
-            this.r_MenuItems = new List<IMenuItem>();
-        }
-
-        internal Menu(string i_Title, int i_Level)
-        {
-            this.m_Title = i_Title;
-            this.r_CurrentLevel = i_Level;
-            this.r_MenuItems = new List<IMenuItem>();
-        }
-
-        internal Menu(string i_Title, int i_Level, List<IMenuItem> i_Items)
-        {
-            this.m_Title = i_Title;
-            this.r_CurrentLevel = i_Level;
-            this.r_MenuItems = new List<IMenuItem>(i_Items);
-        }
-
-        public void AddMenuItem(IMenuItem i_Item, int i_Level)
-        {
-            r_MenuItems.Insert(i_Level, i_Item);
-
-=======
+        
         internal Menu()
         {
             this.r_MenuItems = new List<IMenuItem>();
@@ -58,8 +33,6 @@ namespace Ex04.Menus.Interfaces
         public void AddMenuItem(IMenuItem i_Item, int i_Level)
         {
             r_MenuItems.Insert(i_Level, i_Item);
-
->>>>>>> 2150ab9830432b06c2dc8f7611e7ab684f13a312
         }
 
         internal void printItems()
