@@ -65,7 +65,7 @@ namespace Ex04.Menus.Interfaces
                 {
                     r_MenuItems[chosenAction].OnSelected();
                 }
-            } while (chosenAction != sr_ExitOption)
+            } while (chosenAction != sr_ExitOption);
         }
 
         internal int usersChosenAction()
