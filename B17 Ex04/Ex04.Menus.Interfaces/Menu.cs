@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 
 namespace Ex04.Menus.Interfaces
@@ -7,7 +7,7 @@ namespace Ex04.Menus.Interfaces
     {
         internal string m_Title = "";
         internal readonly List<IMenuItem> r_MenuItems;
-        internal readonly Nullable<int> r_CurrentLevel;
+        internal readonly Nullable<int> r_SerialNumber;
         internal static readonly string sr_Divider = "================";
         internal static readonly int sr_ExitOption = 0;
         
@@ -19,14 +19,14 @@ namespace Ex04.Menus.Interfaces
         internal Menu(string i_Title, Nullable<int> i_Level)
         {
             this.m_Title = i_Title;
-            this.r_CurrentLevel = i_Level;
+            this.r_SerialNumber = i_Level;
             this.r_MenuItems = new List<IMenuItem>();
         }
 
         internal Menu(string i_Title, Nullable<int> i_Level, List<IMenuItem> i_Items)
         {
             this.m_Title = i_Title;
-            this.r_CurrentLevel = i_Level;
+            this.r_SerialNumber = i_Level;
             this.r_MenuItems = new List<IMenuItem>(i_Items);
         }
 
@@ -47,7 +47,7 @@ namespace Ex04.Menus.Interfaces
 
         private string getMenuTitle()
         {
-            return string.Format("{0}. {1}", r_CurrentLevel, m_Title);
+            return string.Format("{0}. {1}", r_SerialNumber, m_Title);
         }
 
         public void ShowMenu()
@@ -70,9 +70,9 @@ namespace Ex04.Menus.Interfaces
         internal int usersChosenAction()
         {
             int action;
-            string zeroAction = r_CurrentLevel.HasValue ? "Back" : "Exit";
+            string exitAction = r_SerialNumber.HasValue ? "Back" : "Exit";
             string message = string.Format("Please enter your choise ({0}-{1} or {2} to {3}",
-                                           1, r_MenuItems.Count, sr_ExitOption, zeroAction);
+                                           1, r_MenuItems.Count, sr_ExitOption, exitAction);
             do
             {
                 Console.WriteLine(message);
