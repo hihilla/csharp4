@@ -11,14 +11,14 @@ namespace Ex04.Menues.Delegates
 			this.AddMenuItem(new BackItem(), sr_ExitOption);
 		}
 
-		public SubMenu(string i_Title, Nullable<int> i_Level)
-			: base(i_Title, i_Level)
+		public SubMenu(string i_Title, Nullable<int> i_Level, SelectedEventHandler i_ActionDelegate)
+            : base(i_Title, i_Level, i_ActionDelegate)
 		{
 			this.AddMenuItem(new BackItem(), sr_ExitOption);
 		}
 
-		public SubMenu(string i_Title, Nullable<int> i_Level, List<MenuItem> i_Items)
-			: base(i_Title, i_Level, i_Items)
+		public SubMenu(string i_Title, Nullable<int> i_Level, List<MenuItem> i_Items, SelectedEventHandler i_ActionDelegate)
+            : base(i_Title, i_Level, i_Items, i_ActionDelegate)
 		{
 			this.AddMenuItem(new BackItem(), sr_ExitOption);
 		}

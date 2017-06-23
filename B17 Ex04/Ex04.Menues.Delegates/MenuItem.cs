@@ -1,9 +1,11 @@
-﻿namespace Ex04.Menues.Delegates
+﻿using System;
+
+namespace Ex04.Menues.Delegates
 {
     class MenuItem
     {
         internal string m_Title;
-        internal int m_SerialNumber;
+        internal readonly Nullable<int> r_SerialNumber;
 
         public delegate void SelectedEventHandler();
         public event SelectedEventHandler Selected;
@@ -12,12 +14,14 @@
         {
             Selected = null;
         }
-        public MenuItem(string i_Title, int i_SerialNumber, SelectedEventHandler i_ActionDelegate)
+
+        public MenuItem(string i_Title, Nullable<int> i_SerialNumber, SelectedEventHandler i_ActionDelegate)
         {
             this.m_Title = i_Title;
-            this.m_SerialNumber = i_SerialNumber;
+            this.r_SerialNumber = i_SerialNumber;
             this.Selected += i_ActionDelegate;
         }
+
         public string Title
         {
             get

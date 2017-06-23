@@ -5,28 +5,24 @@ namespace Ex04.Menues.Delegates
 {
     abstract class Menu : MenuItem
     {
-        internal string m_Title = "";
         internal readonly List<MenuItem> r_MenuItems;
-        internal readonly Nullable<int> r_SerialNumber;
         internal static readonly string sr_Divider = "================";
         internal static readonly int sr_ExitOption = 0;
 
-        internal Menu()
+        internal Menu() : base()
         {
             this.r_MenuItems = new List<MenuItem>();
         }
 
-        internal Menu(string i_Title, Nullable<int> i_Level)
+        internal Menu(string i_Title, Nullable<int> i_Level, SelectedEventHandler i_ActionDelegate) 
+            : base (i_Title, i_Level, i_ActionDelegate)
         {
-            this.m_Title = i_Title;
-            this.r_SerialNumber = i_Level;
             this.r_MenuItems = new List<MenuItem>();
         }
 
-        internal Menu(string i_Title, Nullable<int> i_Level, List<MenuItem> i_Items)
+        internal Menu(string i_Title, Nullable<int> i_Level, List<MenuItem> i_Items, SelectedEventHandler i_ActionDelegate) 
+            : base (i_Title, i_Level, i_ActionDelegate)
         {
-            this.m_Title = i_Title;
-            this.r_SerialNumber = i_Level;
             this.r_MenuItems = new List<MenuItem>(i_Items);
         }
 
