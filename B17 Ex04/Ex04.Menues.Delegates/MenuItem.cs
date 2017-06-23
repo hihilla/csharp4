@@ -2,6 +2,15 @@
 {
     abstract class MenuItem
     {
-        //hilla
+        internal string m_Title;
+        internal int m_SerialNumber;
+
+        public delegate void ActionDelegate();
+        public event ActionDelegate ActionEvent;
+
+        public void doAction()
+        {
+            ActionEvent.Invoke();
+        }
     }
 }
