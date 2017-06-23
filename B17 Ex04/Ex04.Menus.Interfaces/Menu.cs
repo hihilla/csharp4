@@ -11,6 +11,11 @@ namespace Ex04.Menus.Interfaces
         internal static readonly string sr_Divider = "================";
         internal static readonly int sr_ExitOption = 0;
 
+        public Menu()
+        {
+            this.r_MenuItems = new List<IMenuItem>();
+        }
+
         internal Menu(string i_Title, int i_Level)
         {
             this.m_Title = i_Title;
