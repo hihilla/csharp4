@@ -48,7 +48,26 @@ namespace Ex04.Menus.Test
 
             public void OnSelected()
             {
-                // TODO
+                Console.WriteLine("Hit me with a sentence!");
+                string sentence = Console.ReadLine();
+                int counterOfSpaces = 0;
+
+                if (sentence.Length == 0)
+                {
+                    Console.WriteLine("There are no spaces in this sentence");
+                }
+                else
+                {
+                    for (int i = 0; i < sentence.Length - 1; i++)
+                    {
+                        if (sentence[i] == ' ')
+                        {
+                            counterOfSpaces++;
+                        }
+                    }
+
+                    Console.WriteLine(string.Format("There are {0} spaces in that sentence", counterOfSpaces));
+                }
             }
         }
 
@@ -61,7 +80,26 @@ namespace Ex04.Menus.Test
 
             public void OnSelected()
             {
-                // TODO
+                Console.WriteLine("Hit me with a sentence!");
+                string sentence = Console.ReadLine();
+                int counterOfChars = 0;
+
+                if (sentence.Length == 0)
+                {
+                    Console.WriteLine("There are no letters in this sentence");
+                }
+                else
+                {
+                    for (int i = 0; i < sentence.Length; i++)
+                    {
+                        if (Char.IsLetter(sentence[i]))
+                        {
+                            counterOfChars++;
+                        }
+                    }
+
+                    Console.WriteLine(string.Format("There are {0} letters in that sentence", counterOfChars));
+                }
             }
         }
 
