@@ -2,10 +2,7 @@
 {
     public class ExitItem : MenuItem
     {
-        public ExitItem(/*SelectedEventHandler i_EventHandler*/) 
-            : base("Exit", 0/*, i_EventHandler*/)
-        {
-        }
+        public ExitItem() : base("Exit", 0) { }
 
         public override void OnSelected() { }
     }

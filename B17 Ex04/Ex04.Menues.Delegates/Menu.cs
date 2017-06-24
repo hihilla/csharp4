@@ -28,11 +28,6 @@ namespace Ex04.Menues.Delegates
             this.Selected += this.ShowMenu;
         }
 
-        //public override void OnSelected()
-        //{
-        //    ShowMenu();
-        //}
-
         public void AddMenuItem(MenuItem i_Item, int i_Level)
         {
             r_MenuItems.Insert(i_Level, i_Item);
@@ -71,7 +66,7 @@ namespace Ex04.Menues.Delegates
         {
             int action;
             string exitAction = r_SerialNumber.HasValue ? "Back" : "Exit";
-            string message = string.Format("Please enter your choise ({0}-{1} or {2} to {3}",
+            string message = string.Format("Please enter your choise ({0}-{1} or {2} to {3})",
                                            1, r_MenuItems.Count, sr_ExitOption, exitAction);
             do
             {

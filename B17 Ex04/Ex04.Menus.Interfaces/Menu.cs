@@ -73,7 +73,7 @@ namespace Ex04.Menus.Interfaces
         {
             int action;
             string exitAction = r_SerialNumber.HasValue ? "Back" : "Exit";
-            string message = string.Format("Please enter your choise ({0}-{1} or {2} to {3}",
+            string message = string.Format("Please enter your choise ({0}-{1} or {2} to {3})",
                                            1, r_MenuItems.Count, sr_ExitOption, exitAction);
             do
             {
