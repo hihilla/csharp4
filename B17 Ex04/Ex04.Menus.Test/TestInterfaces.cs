@@ -48,7 +48,7 @@ namespace Ex04.Menus.Test
 
             public void OnSelected()
             {
-                countSpacesFunc();
+                countSpacesMethod();
             }
         }
 
@@ -61,7 +61,7 @@ namespace Ex04.Menus.Test
 
             public void OnSelected()
             {
-                countCharsFunc();
+                countCharsMethod();
             }
         }
 
@@ -93,7 +93,7 @@ namespace Ex04.Menus.Test
             }
         }
 
-        private static void countSpacesFunc()
+        private static void countSpacesMethod()
         {
             Console.WriteLine("Hit me with a sentence!");
             string sentence = Console.ReadLine();
@@ -117,7 +117,7 @@ namespace Ex04.Menus.Test
             }
         }
 
-        private static void countCharsFunc()
+        private static void countCharsMethod()
         {
             Console.WriteLine("Hit me with a sentence!");
             string sentence = Console.ReadLine();

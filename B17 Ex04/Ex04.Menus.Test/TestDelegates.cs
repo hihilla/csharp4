@@ -10,11 +10,11 @@ namespace Ex04.Menus.Test
             SubMenu actionsAndInfo = new SubMenu("Actions And Info", 1);
             SubMenu actions = new SubMenu("Actions", 2);
             SubMenu showDateTime = new SubMenu("Show Date/Time", 2);
-            MenuItem displayVersion = new MenuItem("Display Version", 1, DisplayVersionMethod);
-            MenuItem countSpaces = new MenuItem("Count Spaces", 1, null);
-            MenuItem charsCount = new MenuItem("Chars Count", 2, null);
-            MenuItem showTime = new MenuItem("Show Time", 1, ShowTime);
-            MenuItem showDate = new MenuItem("Show Date", 2, ShowDate);
+            MenuItem displayVersion = new MenuItem("Display Version", 1, displayVersionMethod);
+            MenuItem countSpaces = new MenuItem("Count Spaces", 1, countSpacesMethod);
+            MenuItem charsCount = new MenuItem("Chars Count", 2, countCharsMethod);
+            MenuItem showTime = new MenuItem("Show Time", 1, showTimeMethod);
+            MenuItem showDate = new MenuItem("Show Date", 2, showDateMethod);
 
 
             mainMenu.AddMenuItem(actionsAndInfo, 1);
@@ -32,19 +32,67 @@ namespace Ex04.Menus.Test
             return mainMenu;
         }
 
-        public static void DisplayVersionMethod()
+        private static void displayVersionMethod()
         {
             Console.WriteLine("App Version: 17.2.4.0");
         }
 
-        public static void ShowTime()
+        private static void showTimeMethod()
         {
             Console.WriteLine(DateTime.Now.ToShortTimeString());
         }
 
-        public static void ShowDate()
+        private static void showDateMethod()
         {
             Console.WriteLine(DateTime.Now.ToShortDateString());
         }
+
+		private static void countSpacesMethod()
+		{
+			Console.WriteLine("Hit me with a sentence!");
+			string sentence = Console.ReadLine();
+			int counterOfSpaces = 0;
+
+			if (sentence.Length == 0)
+			{
+				Console.WriteLine("There are no spaces in this sentence");
+			}
+			else
+			{
+				for (int i = 0; i < sentence.Length - 1; i++)
+				{
+					if (sentence[i] == ' ')
+					{
+						counterOfSpaces++;
+					}
+				}
+
+				Console.WriteLine(string.Format("There are {0} spaces in that sentence", counterOfSpaces));
+			}
+		}
+
+		private static void countCharsMethod()
+		{
+			Console.WriteLine("Hit me with a sentence!");
+			string sentence = Console.ReadLine();
+			int counterOfChars = 0;
+
+			if (sentence.Length == 0)
+			{
+				Console.WriteLine("There are no letters in this sentence");
+			}
+			else
+			{
+				for (int i = 0; i < sentence.Length; i++)
+				{
+					if (Char.IsLetter(sentence[i]))
+					{
+						counterOfChars++;
+					}
+				}
+
+				Console.WriteLine(string.Format("There are {0} letters in that sentence", counterOfChars));
+			}
+		}
     }
 }
