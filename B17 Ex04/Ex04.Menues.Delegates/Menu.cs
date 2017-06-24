@@ -35,12 +35,16 @@ namespace Ex04.Menues.Delegates
 
         internal void printItems()
         {
-            for (int i = 0; i < r_MenuItems.Count; i++)
+            for (int i = 1; i < r_MenuItems.Count; i++)
             {
                 MenuItem item = r_MenuItems[i];
                 string title = string.Format("{0}. {1}", i, item.Title);
                 Console.WriteLine(title);
             }
+
+            MenuItem exitItem = r_MenuItems[0];
+            string exitTitle = string.Format("{0}. {1}", 0, exitItem.Title);
+            Console.WriteLine(exitTitle);
         }
 
         virtual internal string getMenuTitle()
@@ -73,7 +77,7 @@ namespace Ex04.Menues.Delegates
             int action;
             string exitAction = r_SerialNumber.HasValue ? "Back" : "Exit";
             string message = string.Format("Please enter your choise ({0}-{1} or {2} to {3})",
-                                           1, r_MenuItems.Count, sr_ExitOption, exitAction);
+                                           1, r_MenuItems.Count - 1, sr_ExitOption, exitAction);
             do
             {
                 Console.WriteLine(message);
