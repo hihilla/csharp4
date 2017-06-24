@@ -1,5 +1,5 @@
 ﻿using System;
-using Ex04.Menues.Delegates;
+using Ex04.Menus.Delegates;
 namespace Ex04.Menus.Test
 {
     public class TestDelegates

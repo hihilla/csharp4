@@ -7,7 +7,7 @@ namespace Ex04.Menus.Interfaces
     {
         internal string m_Title = "";
         internal readonly List<IMenuItem> r_MenuItems;
-        internal readonly int r_SerialNumber;
+        internal readonly Nullable<int> r_SerialNumber;
         internal static readonly string sr_Divider = "================";
         internal static readonly int sr_ExitOption = 0;
         internal static readonly string sr_SubMenuClassName = "Ex04.Menus.Interfaces.SubMenu";
@@ -18,14 +18,14 @@ namespace Ex04.Menus.Interfaces
             this.r_MenuItems = new List<IMenuItem>();
         }
 
-        internal Menu(string i_Title, int i_Level)
+        internal Menu(string i_Title, Nullable<int> i_Level)
         {
             this.m_Title = i_Title;
             this.r_SerialNumber = i_Level;
             this.r_MenuItems = new List<IMenuItem>();
         }
 
-        internal Menu(string i_Title, int i_Level, List<IMenuItem> i_Items)
+        internal Menu(string i_Title, Nullable<int> i_Level, List<IMenuItem> i_Items)
         {
             this.m_Title = i_Title;
             this.r_SerialNumber = i_Level;
