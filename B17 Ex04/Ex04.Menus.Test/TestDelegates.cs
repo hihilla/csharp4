@@ -11,19 +11,23 @@ namespace Ex04.Menus.Test
             SubMenu actions = new SubMenu("Actions", 2);
             SubMenu showDateTime = new SubMenu("Show Date/Time", 2);
             MenuItem displayVersion = new MenuItem("Display Version", 1, DisplayVersionMethod);
+            MenuItem countSpaces = new MenuItem("Count Spaces", 1, null);
+            MenuItem charsCount = new MenuItem("Chars Count", 2, null);
+            MenuItem showTime = new MenuItem("Show Time", 1, ShowTime);
+            MenuItem showDate = new MenuItem("Show Date", 2, ShowDate);
 
 
             mainMenu.AddMenuItem(actionsAndInfo, 1);
             mainMenu.AddMenuItem(showDateTime, 2);
 
-            //actionsAndInfo.AddMenuItem(new DisplayVersion(), 1);
-            //actionsAndInfo.AddMenuItem(actions, 2);
+            actionsAndInfo.AddMenuItem(displayVersion, 1);
+            actionsAndInfo.AddMenuItem(actions, 2);
 
-            //actions.AddMenuItem(new CountSpaces(), 1);
-            //actions.AddMenuItem(new CharsCount(), 2);
+            actions.AddMenuItem(countSpaces, 1);
+            actions.AddMenuItem(charsCount, 2);
 
-            //showDateTime.AddMenuItem(new ShowTime(), 1);
-            //showDateTime.AddMenuItem(new ShowDate(), 2);
+            showDateTime.AddMenuItem(showTime, 1);
+            showDateTime.AddMenuItem(showDate, 2);
 
             return mainMenu;
         }
@@ -33,71 +37,14 @@ namespace Ex04.Menus.Test
             Console.WriteLine("App Version: 17.2.4.0");
         }
 
-        //public class DisplayVersion : IMenuItem
-        //{
-        //	public string GetTitle()
-        //	{
-        //		return "Display Version";
-        //	}
+        public static void ShowTime()
+        {
+            Console.WriteLine(DateTime.Now.ToShortTimeString());
+        }
 
-        //	public void OnSelected()
-        //	{
-        //		Console.WriteLine("App Version: 17.2.4.0");
-        //	}
-        //}
-
-        //public class CountSpaces : IMenuItem
-        //{
-        //	public string GetTitle()
-        //	{
-        //		return "Count Spaces";
-        //	}
-
-        //	public void OnSelected()
-        //	{
-        //		// TODO
-        //	}
-        //}
-
-        //public class CharsCount : IMenuItem
-        //{
-        //	public string GetTitle()
-        //	{
-        //		return "Chars Count";
-        //	}
-
-        //	public void OnSelected()
-        //	{
-        //		// TODO
-        //	}
-        //}
-
-        //public class ShowTime : IMenuItem
-        //{
-        //	public string GetTitle()
-        //	{
-        //		return "Show Time";
-        //	}
-
-        //	public void OnSelected()
-        //	{
-        //		Console.WriteLine(DateTime.Now.ToString("HH:mm:ss tt"));
-        //		Console.WriteLine(DateTime.Now.ToShortTimeString());
-        //	}
-        //}
-
-        //public class ShowDate : IMenuItem
-        //{
-        //	public string GetTitle()
-        //	{
-        //		return "Show Date";
-        //	}
-
-        //	public void OnSelected()
-        //	{
-        //		Console.WriteLine(DateTime.Now.ToString("dd/MM/yyyy"));
-        //		Console.WriteLine(DateTime.Now.ToShortDateString());
-        //	}
-        //}
+        public static void ShowDate()
+        {
+            Console.WriteLine(DateTime.Now.ToShortDateString());
+        }
     }
 }

@@ -7,7 +7,7 @@ namespace Ex04.Menus.Test
         {
             TestInterfaces.GenerateMenus();
 
-
+            TestDelegates.GenerateMenus();
         }
     }
 }
