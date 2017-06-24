@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Ex04.Menus.Interfaces
 {
-    abstract class Menu
+    public abstract class Menu
     {
         internal string m_Title = "";
         internal readonly List<IMenuItem> r_MenuItems;

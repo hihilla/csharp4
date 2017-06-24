@@ -2,7 +2,7 @@
 
 namespace Ex04.Menus.Interfaces
 {
-    class ExitItem : IMenuItem
+    public class ExitItem : IMenuItem
     {
         public string GetTitle()
         {

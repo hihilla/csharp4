@@ -2,7 +2,7 @@
 
 namespace Ex04.Menues.Delegates
 {
-    class MenuItem
+    public class MenuItem
     {
         internal string m_Title;
         internal readonly Nullable<int> r_SerialNumber;

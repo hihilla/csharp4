@@ -1,6 +1,6 @@
 ﻿namespace Ex04.Menus.Interfaces
 {
-    interface IMenuItem
+    public interface IMenuItem
     {
         void OnSelected();
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Ex04.Menues.Delegates
 {
-    abstract class Menu : MenuItem
+    public abstract class Menu : MenuItem
     {
         internal readonly List<MenuItem> r_MenuItems;
         internal static readonly string sr_Divider = "================";

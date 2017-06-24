@@ -2,7 +2,7 @@
 
 namespace Ex04.Menues.Delegates
 {
-    class MainMenu : Menu
+    public class MainMenu : Menu
     {
 		public MainMenu()
 			: base()

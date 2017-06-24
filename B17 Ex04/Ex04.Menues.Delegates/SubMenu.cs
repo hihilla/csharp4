@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Ex04.Menues.Delegates
 {
-    class SubMenu : Menu
+    public class SubMenu : Menu
     {
 		public SubMenu()
 			: base()

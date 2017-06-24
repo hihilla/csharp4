@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Ex04.Menus.Interfaces
 {
-    class MainMenu : Menu
+    public class MainMenu : Menu
     {
         public MainMenu()
             : base()
