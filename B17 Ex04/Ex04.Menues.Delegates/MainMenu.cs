@@ -21,5 +21,10 @@ namespace Ex04.Menues.Delegates
 		{
 			this.AddMenuItem(new ExitItem(), sr_ExitOption);
 		}
+
+		override internal string getMenuTitle()
+		{
+            return m_Title;
+		}
     }
 }

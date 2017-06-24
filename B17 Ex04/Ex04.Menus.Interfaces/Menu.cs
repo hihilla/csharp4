@@ -45,7 +45,7 @@ namespace Ex04.Menus.Interfaces
             }
         }
 
-        internal string getMenuTitle()
+        virtual internal string getMenuTitle()
         {
             return string.Format("{0}. {1}", r_SerialNumber, m_Title);
         }
