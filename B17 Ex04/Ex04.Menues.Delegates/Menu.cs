@@ -58,7 +58,13 @@ namespace Ex04.Menues.Delegates
                 Console.WriteLine(sr_Divider);
                 this.printItems();
                 chosenAction = this.usersChosenAction();
+                Console.Clear();
                 r_MenuItems[chosenAction].OnSelected();
+				if (chosenAction != sr_ExitOption)
+                {
+                    Console.WriteLine("Press any key to continue...");
+                    Console.ReadKey();
+				}
             } while (chosenAction != sr_ExitOption);
         }
 

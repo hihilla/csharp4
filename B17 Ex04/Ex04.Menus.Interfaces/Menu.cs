@@ -69,7 +69,14 @@ namespace Ex04.Menus.Interfaces
                 Console.WriteLine(sr_Divider);
                 this.printItems();
                 chosenAction = this.usersChosenAction();
+                Console.Clear();
                 r_MenuItems[chosenAction].OnSelected();
+                Console.WriteLine(chosenAction);
+				if (chosenAction != sr_ExitOption)
+                {
+                    Console.WriteLine("Press any key to continue...");
+                    Console.ReadKey();
+				}
             } while (chosenAction != sr_ExitOption);
         }
 
@@ -84,7 +91,7 @@ namespace Ex04.Menus.Interfaces
                 Console.WriteLine(message);
             } while (!int.TryParse(Console.ReadLine(), out action)
                      || (action < 0)
-                     || (action > r_MenuItems.Count));
+                     || (action > r_MenuItems.Count - 1));
 
             return action;
         }
