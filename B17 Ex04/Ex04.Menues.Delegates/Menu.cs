@@ -14,22 +14,24 @@ namespace Ex04.Menues.Delegates
             this.r_MenuItems = new List<MenuItem>();
         }
 
-        internal Menu(string i_Title, Nullable<int> i_Level/*, SelectedEventHandler i_EventHandler*/) 
-            : base (i_Title, i_Level/*, i_EventHandler*/)
+        internal Menu(string i_Title, Nullable<int> i_Level) 
+            : base (i_Title, i_Level)
         {
             this.r_MenuItems = new List<MenuItem>();
+            this.Selected += this.ShowMenu;
         }
 
-        internal Menu(string i_Title, Nullable<int> i_Level, List<MenuItem> i_Items/*, SelectedEventHandler i_EventHandler*/) 
-            : base (i_Title, i_Level/*, i_EventHandler*/)
+        internal Menu(string i_Title, Nullable<int> i_Level, List<MenuItem> i_Items) 
+            : base (i_Title, i_Level)
         {
             this.r_MenuItems = new List<MenuItem>(i_Items);
+            this.Selected += this.ShowMenu;
         }
 
-        public override void OnSelected()
-        {
-            ShowMenu();
-        }
+        //public override void OnSelected()
+        //{
+        //    ShowMenu();
+        //}
 
         public void AddMenuItem(MenuItem i_Item, int i_Level)
         {

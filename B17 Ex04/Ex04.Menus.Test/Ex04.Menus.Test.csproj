@@ -32,6 +32,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="TestInterfaces.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="TestDelegates.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ex04.Menues.Delegates\Ex04.Menues.Delegates.csproj">

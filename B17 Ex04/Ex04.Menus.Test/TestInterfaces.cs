@@ -4,14 +4,26 @@ namespace Ex04.Menus.Test
 {
     public class TestInterfaces
     {
-        public static void Main()
+        public static MainMenu GenerateMenus()
         {
+            MainMenu mainMenu = new MainMenu();
+            SubMenu actionsAndInfo = new SubMenu("Actions And Info", 1);
+            SubMenu actions = new SubMenu("Actions", 2);
+            SubMenu showDateTime = new SubMenu("Show Date/Time", 2);
 
-        }
+            mainMenu.AddMenuItem(actionsAndInfo, 1);
+            mainMenu.AddMenuItem(showDateTime, 2);
 
-        public class ActionsAndInfo : SubMenu
-        {
+            actionsAndInfo.AddMenuItem(new DisplayVersion(), 1);
+            actionsAndInfo.AddMenuItem(actions, 2);
 
+            actions.AddMenuItem(new CountSpaces(), 1);
+            actions.AddMenuItem(new CharsCount(), 2);
+
+            showDateTime.AddMenuItem(new ShowTime(), 1);
+            showDateTime.AddMenuItem(new ShowDate(), 2);
+
+            return mainMenu;
         }
 
         public class DisplayVersion : IMenuItem
@@ -25,11 +37,6 @@ namespace Ex04.Menus.Test
             {
                 Console.WriteLine("App Version: 17.2.4.0");
             }
-        }
-
-        public class Actions : SubMenu
-        {
-
         }
 
         public class CountSpaces : IMenuItem
@@ -56,11 +63,6 @@ namespace Ex04.Menus.Test
             {
                 // TODO
             }
-        }
-
-        public class ShowDateTime : SubMenu
-        {
-
         }
 
         public class ShowTime : IMenuItem
