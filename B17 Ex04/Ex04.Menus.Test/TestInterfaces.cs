@@ -6,7 +6,7 @@ namespace Ex04.Menus.Test
     {
         public static MainMenu GenerateMenus()
         {
-            MainMenu mainMenu = new MainMenu();
+            MainMenu mainMenu = new MainMenu("Application");
             SubMenu actionsAndInfo = new SubMenu("Actions And Info", 1);
             SubMenu actions = new SubMenu("Actions", 2);
             SubMenu showDateTime = new SubMenu("Show Date/Time", 2);

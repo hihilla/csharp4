@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace Ex04.Menus.Interfaces
@@ -10,7 +10,7 @@ namespace Ex04.Menus.Interfaces
         internal readonly Nullable<int> r_SerialNumber;
         internal static readonly string sr_Divider = "================";
         internal static readonly int sr_ExitOption = 0;
-        
+
         internal Menu()
         {
             this.r_MenuItems = new List<IMenuItem>();
@@ -45,12 +45,17 @@ namespace Ex04.Menus.Interfaces
             }
         }
 
-        private string getMenuTitle()
+        internal string getMenuTitle()
         {
             return string.Format("{0}. {1}", r_SerialNumber, m_Title);
         }
 
-        public void ShowMenu()
+        public void OnSelected()
+        {
+            ShowMenu();
+        }
+
+        internal void ShowMenu()
         {
             int chosenAction;
             do
@@ -73,8 +78,8 @@ namespace Ex04.Menus.Interfaces
             do
             {
                 Console.WriteLine(message);
-            } while (!int.TryParse(Console.ReadLine(), out action) 
-                     || (action < 0) 
+            } while (!int.TryParse(Console.ReadLine(), out action)
+                     || (action < 0)
                      || (action > r_MenuItems.Count));
 
             return action;

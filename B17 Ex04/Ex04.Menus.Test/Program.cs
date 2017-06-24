@@ -5,9 +5,9 @@ namespace Ex04.Menus.Test
     {
         public static void Main()
         {
-            TestInterfaces.GenerateMenus();
+            TestInterfaces.GenerateMenus().OnSelected();
 
-            TestDelegates.GenerateMenus();
+            TestDelegates.GenerateMenus().OnSelected();
         }
     }
 }
