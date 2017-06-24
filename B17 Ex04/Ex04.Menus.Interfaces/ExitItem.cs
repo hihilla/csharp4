@@ -9,9 +9,6 @@ namespace Ex04.Menus.Interfaces
             return "Exit";
         }
 
-        public void OnSelected()
-        {
-            Environment.Exit(0);
-        }
+        public void OnSelected() { }
     }
 }
