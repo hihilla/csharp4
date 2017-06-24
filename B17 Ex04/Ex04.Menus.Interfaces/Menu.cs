@@ -10,6 +10,8 @@ namespace Ex04.Menus.Interfaces
         internal readonly Nullable<int> r_SerialNumber;
         internal static readonly string sr_Divider = "================";
         internal static readonly int sr_ExitOption = 0;
+        internal static readonly string sr_SubMenuClassName = "Ex04.Menus.Interfaces.SubMenu";
+        internal static readonly string sr_MainMenuClassName = "Ex04.Menus.Interfaces.MainMenu";
 
         internal Menu()
         {
@@ -69,10 +71,15 @@ namespace Ex04.Menus.Interfaces
                 Console.WriteLine(sr_Divider);
                 this.printItems();
                 chosenAction = this.usersChosenAction();
-				Console.Clear();
-				r_MenuItems[chosenAction].OnSelected();
-				Console.WriteLine("Press any key to continue...");
-				Console.ReadKey();
+                Console.Clear();
+                r_MenuItems[chosenAction].OnSelected();
+                if (chosenAction != sr_ExitOption
+                    && r_MenuItems[chosenAction].GetType().ToString() != sr_SubMenuClassName
+                    && r_MenuItems[chosenAction].GetType().ToString() != sr_MainMenuClassName)
+                {
+                    Console.WriteLine("Press any key to continue...");
+                    Console.ReadKey();
+                }
             } while (chosenAction != sr_ExitOption);
         }
 

@@ -27,10 +27,5 @@ namespace Ex04.Menus.Interfaces
         {
             return m_Title;
         }
-
-        public void OnSelected()
-        {
-            base.ShowMenu();
-        }
     }
 }

@@ -8,21 +8,23 @@ namespace Ex04.Menues.Delegates
         internal readonly List<MenuItem> r_MenuItems;
         internal static readonly string sr_Divider = "================";
         internal static readonly int sr_ExitOption = 0;
+        internal static readonly string sr_SubMenuClassName = "Ex04.Menues.Delegates.SubMenu";
+        internal static readonly string sr_MainMenuClassName = "Ex04.Menues.Delegates.MainMenu";
 
         internal Menu() : base()
         {
             this.r_MenuItems = new List<MenuItem>();
         }
 
-        internal Menu(string i_Title, Nullable<int> i_Level) 
-            : base (i_Title, i_Level)
+        internal Menu(string i_Title, Nullable<int> i_Level)
+            : base(i_Title, i_Level)
         {
             this.r_MenuItems = new List<MenuItem>();
             this.Selected += this.ShowMenu;
         }
 
-        internal Menu(string i_Title, Nullable<int> i_Level, List<MenuItem> i_Items) 
-            : base (i_Title, i_Level)
+        internal Menu(string i_Title, Nullable<int> i_Level, List<MenuItem> i_Items)
+            : base(i_Title, i_Level)
         {
             this.r_MenuItems = new List<MenuItem>(i_Items);
             this.Selected += this.ShowMenu;
@@ -57,18 +59,20 @@ namespace Ex04.Menues.Delegates
             int chosenAction;
             do
             {
-				Console.Clear();
+                Console.Clear();
                 Console.WriteLine(getMenuTitle());
                 Console.WriteLine(sr_Divider);
                 this.printItems();
                 chosenAction = this.usersChosenAction();
                 Console.Clear();
                 r_MenuItems[chosenAction].OnSelected();
-				if (chosenAction != sr_ExitOption)
+                if (chosenAction != sr_ExitOption
+                    && r_MenuItems[chosenAction].GetType().ToString() != sr_SubMenuClassName
+                    && r_MenuItems[chosenAction].GetType().ToString() != sr_MainMenuClassName)
                 {
                     Console.WriteLine("Press any key to continue...");
                     Console.ReadKey();
-				}
+                }
             } while (chosenAction != sr_ExitOption);
         }
 
