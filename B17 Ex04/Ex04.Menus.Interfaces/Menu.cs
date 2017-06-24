@@ -64,19 +64,15 @@ namespace Ex04.Menus.Interfaces
             int chosenAction;
             do
             {
-				Console.Clear();
+                Console.Clear();
                 Console.WriteLine(getMenuTitle());
                 Console.WriteLine(sr_Divider);
                 this.printItems();
                 chosenAction = this.usersChosenAction();
-                Console.Clear();
-                r_MenuItems[chosenAction].OnSelected();
-                Console.WriteLine(chosenAction);
-				if (chosenAction != sr_ExitOption)
-                {
-                    Console.WriteLine("Press any key to continue...");
-                    Console.ReadKey();
-				}
+				Console.Clear();
+				r_MenuItems[chosenAction].OnSelected();
+				Console.WriteLine("Press any key to continue...");
+				Console.ReadKey();
             } while (chosenAction != sr_ExitOption);
         }
 
