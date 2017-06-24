@@ -16,14 +16,14 @@ namespace Ex04.Menues.Delegates
             this.r_MenuItems = new List<MenuItem>();
         }
 
-        internal Menu(string i_Title, Nullable<int> i_Level)
+        internal Menu(string i_Title, int i_Level)
             : base(i_Title, i_Level)
         {
             this.r_MenuItems = new List<MenuItem>();
             this.Selected += this.ShowMenu;
         }
 
-        internal Menu(string i_Title, Nullable<int> i_Level, List<MenuItem> i_Items)
+        internal Menu(string i_Title, int i_Level, List<MenuItem> i_Items)
             : base(i_Title, i_Level)
         {
             this.r_MenuItems = new List<MenuItem>(i_Items);
