@@ -6,9 +6,13 @@ namespace Ex04.Menus.Test
     {
         public static void Main()
         {
-            
+
         }
 
+        public class ActionsAndInfo : SubMenu
+        {
+
+        }
 
         public class DisplayVersion : IMenuItem
         {
@@ -23,60 +27,64 @@ namespace Ex04.Menus.Test
             }
         }
 
-		public class CountSpaces : IMenuItem
-		{
-			public string GetTitle()
-			{
-				return "Count Spaces";
-			}
+        public class Actions : SubMenu
+        {
 
-			public void OnSelected()
-			{
-				// TODO
-			}
-		}
+        }
 
-		public class CharsCount : IMenuItem
-		{
-			public string GetTitle()
-			{
-				return "Chars Count";
-			}
+        public class CountSpaces : IMenuItem
+        {
+            public string GetTitle()
+            {
+                return "Count Spaces";
+            }
 
-			public void OnSelected()
-			{
-				// TODO
-			}
-		}
+            public void OnSelected()
+            {
+                // TODO
+            }
+        }
 
-		public class ShowTime : IMenuItem
-		{
-			public string GetTitle()
-			{
-				return "Show Time";
-			}
+        public class CharsCount : IMenuItem
+        {
+            public string GetTitle()
+            {
+                return "Chars Count";
+            }
 
-			public void OnSelected()
-			{
+            public void OnSelected()
+            {
+                // TODO
+            }
+        }
+
+        public class ShowTime : IMenuItem
+        {
+            public string GetTitle()
+            {
+                return "Show Time";
+            }
+
+            public void OnSelected()
+            {
                 Console.WriteLine(DateTime.Now.ToString("HH:mm:ss tt"));
                 Console.WriteLine(DateTime.Now.ToShortTimeString());
-			}
-		}
+            }
+        }
 
-		public class ShowDate : IMenuItem
-		{
-			public string GetTitle()
-			{
-				return "Show Date";
-			}
+        public class ShowDate : IMenuItem
+        {
+            public string GetTitle()
+            {
+                return "Show Date";
+            }
 
-			public void OnSelected()
-			{
-				Console.WriteLine(DateTime.Now.ToString("dd/MM/yyyy"));
+            public void OnSelected()
+            {
+                Console.WriteLine(DateTime.Now.ToString("dd/MM/yyyy"));
                 Console.WriteLine(DateTime.Now.ToShortDateString());
-			}
-		}
-
+            }
+        }
 
     }
 }
