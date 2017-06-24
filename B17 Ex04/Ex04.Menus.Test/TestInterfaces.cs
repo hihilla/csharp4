@@ -74,7 +74,6 @@ namespace Ex04.Menus.Test
 
             public void OnSelected()
             {
-                Console.WriteLine(DateTime.Now.ToString("HH:mm:ss tt"));
                 Console.WriteLine(DateTime.Now.ToShortTimeString());
             }
         }
@@ -88,7 +87,6 @@ namespace Ex04.Menus.Test
 
             public void OnSelected()
             {
-                Console.WriteLine(DateTime.Now.ToString("dd/MM/yyyy"));
                 Console.WriteLine(DateTime.Now.ToShortDateString());
             }
         }

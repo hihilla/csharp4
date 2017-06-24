@@ -64,11 +64,11 @@ namespace Ex04.Menus.Interfaces
             int chosenAction;
             do
             {
+				Console.Clear();
                 Console.WriteLine(getMenuTitle());
                 Console.WriteLine(sr_Divider);
                 this.printItems();
                 chosenAction = this.usersChosenAction();
-                Console.Clear();
                 r_MenuItems[chosenAction].OnSelected();
             } while (chosenAction != sr_ExitOption);
         }
